@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos Psicológicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="imagenes/7.jpg" alt="Escudo Colegio" class="escudo-colegio">
+            <h1>Efectos Psicológicos</h1>
+        </div>
+        <img src="imagenes/5b3e6cb0-34e9-4292-b4fd-bb82875b6908.jpg" alt="Logo" class="logo-proyecto">
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="que-es-edicion.html">¿Qué es la edición?</a></li>
+                <li><a href="efectos-psicologicos-en-la-adolecencia.html" class="active">Efectos psicológicos</a></li>
+                <li><a href="ejemplos-de-edicion.html">Ejemplos de edición</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2 class="titulo-seccion">Impacto del Entorno Digital en Adolescentes</h2>
+
+            <div class="carrusel-wrapper">
+                <div class="carrusel-container" id="carrusel">
+                    
+                    <section class="tarjeta-carrusel">
+                        <h3>1. Baja Autoestima y Comparación Social</h3>
+                        <p>El consumo persistente de cuerpos y estilos de vida idílicos modificados artificialmente induce a evaluaciones personales negativas y frustración.</p>
+                        <img src="imagenes/imagen4.jpg" alt="Comparación" class="img-carrusel">
+                    </section>
+
+                    <section class="tarjeta-carrusel">
+                        <h3>2. Trastornos de la Imagen Corporal</h3>
+                        <p>Los filtros automáticos de simetría facial crean obsesiones dismórficas sobre imperfecciones biológicas normales e inexistentes.</p>
+                        <img src="imagenes/imagen3.jpg" alt="Dismorfia" class="img-carrusel">
+                    </section>
+
+                    <section class="tarjeta-carrusel">
+                        <h3>3. Ansiedad por la Perfección</h3>
+                        <p>La necesidad imperativa de subir exclusivamente retratos procesados algorítmicamente detona cuadros de estrés agudo ante la crítica social.</p>
+                        <img src="imagenes/imagen2.jpg" alt="Ansiedad" class="img-carrusel">
+                    </section>
+
+                    <section class="tarjeta-carrusel">
+                        <h3>4. Dependencia de Validación (Likes)</h3>
+                        <p>La neuroquímica adolescente busca aprobación social digital. La escasez de reacciones virtuales genera aislamiento y decaimiento emocional.</p>
+                        <img src="imagenes/imagen5.jpg" alt="Aprobación" class="img-carrusel">
+                    </section>
+
+                    <section class="tarjeta-carrusel">
+                        <h3>5. Distorsión de la Realidad</h3>
+                        <p>Se debilita la capacidad crítica del estudiante para discernir entre texturas humanas orgánicas y aquellas generadas por software de retoque.</p>
+                        <img src="imagenes/imagen6.jpg" alt="Distorsión" class="img-carrusel">
+                    </section>
+
+                </div>
+
+                <button class="btn-carrusel prev" onclick="moverCarrusel(-1)">&#10094;</button>
+                <button class="btn-carrusel next" onclick="moverCarrusel(1)">&#10095;</button>
+            </div>
+
+            <a href="Principal.html" class="btn-volver">← Volver al Inicio</a>
+        </main>
+    </div>
+
+    <script>
+        let index = 0;
+        function moverCarrusel(direccion) {
+            const carrusel = document.getElementById('carrusel');
+            const tarjetas = document.querySelectorAll('.tarjeta-carrusel');
+            
+            index += direccion;
+
+            if (index >= tarjetas.length) index = 0;
+            if (index < 0) index = tarjetas.length - 1;
+
+            carrusel.style.transform = `translateX(${-index * 100}%)`;
+        }
+    </script>
+</body>
+</html>
